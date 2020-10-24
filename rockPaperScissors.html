@@ -6,8 +6,47 @@
 </head>
 <body>
     <script>
-        
-        
+
+        function computerPlay() {
+            let options = ['rock', 'paper', 'scissors'];
+            let x = Math.floor(Math.random() * options.length);
+            return options[x];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            playerSelection = playerSelection.toLowerCase();
+            if (playerSelection === computerSelection) {
+                return 0;
+            } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                return 1;
+            } else if (playerSelection === "paper" && computerSelection === "rock") {
+                return 1;
+            } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                return 1;
+            } else return 2;
+        }
+
+        let playerCounter = 0;
+        let computerCounter = 0;
+
+        function game() {
+            for (let i=0; i<5; i++) {
+                let x = prompt("Your move?");
+                let y = computerPlay();
+                let result = playRound (x, y);
+                if (result === 0) {
+                    console.log("It's a tie. Current score: " + playerCounter + " - " + computerCounter)
+                } else if (result === 1) {
+                    playerCounter += 1;
+                    console.log("You win! Current score: " + playerCounter + " - " + computerCounter);
+                } else {
+                    computerCounter += 1;
+                    console.log("You lose! Current score: " + playerCounter + " - " + computerCounter);
+                }
+            }
+        }
+
+        game();
     </script>
 </body>
 </html>
