@@ -1,0 +1,64 @@
+<body>
+    <h1>
+      THE TITLE OF YOUR WEBPAGE
+    </h1>
+    <div id="container"></div>
+    <div id="buttContainer">
+        <button id="1">Click Me</button>
+        <button id="2">Click Me</button>
+        <button id="3">Click Me</button>
+        <button id="btn">Btn</button>
+    </div>
+
+    <script>
+        const container = document.querySelector('#container');
+
+        const content = document.createElement('div');
+        content.classList.add('content');
+        content.textContent = 'This is the glorious text-content!';
+
+        const newP = document.createElement('p');
+        newP.style.color = 'red';
+        newP.textContent = "Hey I'm red!";
+
+        const newH3 = document.createElement('h3');
+        newH3.style.color = 'blue';
+        newH3.textContent = "I'm a blue h3!";
+
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('newDiv');
+        newDiv.style.border = 'thick solid black';
+        newDiv.style.backgroundColor = 'pink';
+
+        const divH1 = document.createElement('h1');
+        divH1.textContent = "I'm in a div";
+
+        const divP = document.createElement('p');
+        divP.textContent = "ME TOO!";
+
+        container.appendChild(content);
+        container.appendChild(newP);
+        container.appendChild(newH3);
+        newDiv.appendChild(divH1);
+        newDiv.appendChild(divP);
+        container.appendChild(newDiv);
+
+        btn.addEventListener('click', function (e) {
+            console.log(e);
+        });
+
+        // buttons is a node list. It looks and acts much like an array.
+        const buttons = document.querySelectorAll('button');
+
+        // we use the .forEach method to iterate through each button
+        buttons.forEach((button) => {
+
+            // and for each one we add a 'click' listener
+            button.addEventListener('click', () => {
+                alert(button.id);
+            });
+        });
+
+
+    </script>   
+  </body>
