@@ -1,0 +1,15 @@
+#menu {
+    padding-bottom: 10px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+    height: 960px;
+}
+
+.gridBox {
+    background-color: #8FB47C;
+    border: 1px solid black;
+}
